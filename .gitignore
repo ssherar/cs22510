@@ -1,0 +1,18 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# C and C++ Files
+
+*.o
+*.out
+*.a
+*.lib
+*.app
+*.slo
+*.lo
+*.so
+*.dylib
