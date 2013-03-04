@@ -16,3 +16,8 @@
 *.lo
 *.so
 *.dylib
+
+*.swp
+
+#Compiled files
+event-manager/bin/*
