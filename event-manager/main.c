@@ -281,8 +281,6 @@ void startup() {
     scanf(" %30s", log_filename);
     load_log_file(log_filename, 10);
 
-   // close_log_file(); 
-
     printf("Please enter the file for the event information > ");
     scanf(" %30s", info_filename);
     load_info_file(info_filename, &event);
