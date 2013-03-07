@@ -5,6 +5,10 @@
 *.war
 *.ear
 
+#Eclipse
+.classpath
+.project
+
 # C and C++ Files
 
 *.o
