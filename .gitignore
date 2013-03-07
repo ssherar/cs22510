@@ -21,3 +21,5 @@
 
 #Compiled files
 event-manager/bin/*
+event-creation/bin/*
+checkpoint-manager/bin/*
