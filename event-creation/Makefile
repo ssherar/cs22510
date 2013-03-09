@@ -1,5 +1,5 @@
 all:
-	g++ -g -Wall main.cpp -o bin/run
+	g++ -g -Wall main.cpp Event.cpp -o bin/run
 
 clean:
 	rm -rf bin/*
