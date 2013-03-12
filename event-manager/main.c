@@ -21,7 +21,7 @@
 #include        <string.h>
 #include        "fileio.h"
 #include        "node.h"
-
+#include	"log.h"
 /**
  * The struct to hold the event data
  */
@@ -279,7 +279,7 @@ void startup() {
 
     printf("Please enter the file for the logging > ");
     scanf(" %30s", log_filename);
-    load_log_file(log_filename, 10);
+    load_log_file(log_filename);
 
     printf("Please enter the file for the event information > ");
     scanf(" %30s", info_filename);
@@ -287,7 +287,6 @@ void startup() {
 
     printf("Please enter the file for the node type > ");
     scanf(" %30s", node_filename);
-    close_log_file();
     node_lines = get_number_lines(node_filename);
     if (0 < node_lines) {
         node_types = (Node*) malloc(node_lines * sizeof (struct Node));
