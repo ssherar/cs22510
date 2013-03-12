@@ -24,8 +24,6 @@
 #include "fileio.h"
 #include "node.h"
 
-FILE* log_file_ptr = NULL;
-
 
 /**
  * The method to read in the info file
@@ -228,16 +226,3 @@ void load_time_file(char filename[], int length, Competitor* comp) {
     fclose(fp);
 }
 
-void load_log_file(char filename[], int length) {
-	log_file_ptr = open(filename, "rw");
-	if(flock(log_file_ptr, LOCK_EX) == 0) {
-		printf("locked\n");
-	}
-}
-
-void close_log_file() {
-	if(flock(log_file_ptr, LOCK_UN) == 0) {
-		printf("unlocked\n");
-	}
-	close(log_file_ptr);
-}

@@ -29,8 +29,6 @@ void load_courses_file(char filename[], int lines,
 void load_track_file(char filename[], int lines, Track *tracks);
 int get_number_lines(char filename[]);
 void load_time_file(char filename[], int length, Competitor* comp);
-void load_log_file(char filename[], int length);
-void close_log_file();
 
 #endif	/* FILEIO_H */
 
