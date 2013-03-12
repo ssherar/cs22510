@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <time.h>
+
 
 int log_file = -1;
 FILE* log_file_ptr = 0x0;
@@ -22,7 +24,7 @@ void load_log_file(char filename[]) {
 	if(fcntl(log_file, F_SETLK, fl) != -1) {
 		printf("Is now locked\n");
 	}
-	log_file_ptr = fopen(filename, "a");
+	log_file_ptr = fopen(filename, "a+");
 }
 
 void close_log_file() {
@@ -32,6 +34,8 @@ void close_log_file() {
 	}
 }
 
-void append_log_file() {
-	fprintf(log_file_ptr, "%s\n", "Hello World");
+void append_log_file(char action[]) {
+	time_t dt = time(NULL);
+	printf("%s\n", ctime(&dt));
+	fprintf(log_file_ptr, "[%s] %s\n", ctime(&dt), action);
 }
