@@ -7,8 +7,11 @@
 
 using namespace std;
 
+void event();
+void entrants();
+void courses();
+
 CLI cli;
-void blah();
 
 int main(int argc, char** argv) {
 	/*cout << "Hello world" << endl;
@@ -37,8 +40,7 @@ int main(int argc, char** argv) {
 		choice = cli.get_input();
 		switch(choice) {
 			case '1':
-				blah();
-				break;
+				event();
 			case '2':
 				break;
 			case '3':
@@ -47,6 +49,6 @@ int main(int argc, char** argv) {
 	} while(choice != 'q');
 }
 
-void blah() {
-	cout << "blah" << endl;
+void events() {
+	
 }
