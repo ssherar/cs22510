@@ -37,6 +37,16 @@ void CLI::write_entrant_menu() {
 	cout << "Please enter your choice > ";
 }
 
+void CLI::write_courses_menu() {
+	cout << endl;
+	cout << " Courses:" << endl;
+	cout << " 1) Add new Course " << endl;
+	cout << " 2) List Courses " << endl;
+	cout << " q) Quit back to main menu" << endl;
+	cout << endl;
+	cout << "Please enter your choice > ";
+}
+
 char CLI::get_input() {
 	char input;
 	cin >> input;

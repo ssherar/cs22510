@@ -45,6 +45,7 @@ int main(int argc, char** argv) {
 				entrants();
 				break;
 			case '3':
+				courses();
 				break;
 		}
 	} while(choice != 'q');
@@ -64,4 +65,12 @@ void entrants() {
 		cli.write_entrant_menu();
 		en_choice = cli.get_input();
 	} while(en_choice != 'q');
+}
+
+void courses() {
+	char c_choice = 'A';
+	do {
+		cli.write_courses_menu();
+		c_choice = cli.get_input();
+	} while(c_choice != 'q');
 }
