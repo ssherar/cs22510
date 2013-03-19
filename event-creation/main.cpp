@@ -49,6 +49,10 @@ int main(int argc, char** argv) {
 	} while(choice != 'q');
 }
 
-void events() {
-	
+void event() {
+	char e_choice = 'A';
+	do {
+		cli.write_event_menu();
+		e_choice = cli.get_input();
+	} while(e_choice != 'q');
 }
