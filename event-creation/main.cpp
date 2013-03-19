@@ -7,11 +7,13 @@
 
 using namespace std;
 
-void event();
-void entrants();
-void courses();
+void event_menu();
+void entrants_menu();
+void courses_menu();
 
 CLI cli;
+Event * event;
+
 
 int main(int argc, char** argv) {
 	/*cout << "Hello world" << endl;
@@ -40,26 +42,42 @@ int main(int argc, char** argv) {
 		choice = cli.get_input();
 		switch(choice) {
 			case '1':
-				event();
+				event_menu();
+				break;
 			case '2':
-				entrants();
+				entrants_menu();
 				break;
 			case '3':
-				courses();
+				courses_menu();
 				break;
 		}
 	} while(choice != 'q');
 }
 
-void event() {
+void event_menu() {
 	char e_choice = 'A';
 	do {
 		cli.write_event_menu();
 		e_choice = cli.get_input();
+		if('1' == e_choice) {
+			string name = cli.get_input_string("Please enter the event name");
+			int day = cli.get_input_int("Please enter a day");
+			int month = cli.get_input_int("Please enter a month");
+			int year = cli.get_input_int("Please enter a year");
+			int hour = cli.get_input_int("Please enter the start hour");
+			int minute = cli.get_input_int("Please enter the start minute");
+			event = new Event(name, day, month, year, hour, minute);
+		} else if('2' == e_choice) {
+			if(NULL == event) {
+				cli.write_screen("No event has beem created");
+			} else {
+				cli.write_screen(event->format_for_screen());
+			}
+		}
 	} while(e_choice != 'q');
 }
 
-void entrants() {
+void entrants_menu() {
 	char en_choice = 'A';
 	do {
 		cli.write_entrant_menu();
@@ -67,7 +85,7 @@ void entrants() {
 	} while(en_choice != 'q');
 }
 
-void courses() {
+void courses_menu() {
 	char c_choice = 'A';
 	do {
 		cli.write_courses_menu();

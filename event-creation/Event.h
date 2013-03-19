@@ -6,4 +6,5 @@ class Event {
 		Event(std::string, int, int, int, int, int);
 		//Event();
 		char* format_printing_file();
+		std::string format_for_screen();
 };

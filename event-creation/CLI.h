@@ -6,4 +6,7 @@ class CLI {
 		static void write_entrant_menu();
 		static void write_courses_menu();
 		static char get_input();
+		static std::string get_input_string(std::string);
+		static int get_input_int(std::string);
+		static void write_screen(std::string);
 };

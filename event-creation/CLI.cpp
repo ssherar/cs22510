@@ -20,8 +20,8 @@ void CLI::write_main_menu() {
 void CLI::write_event_menu() {
 	cout << endl;
 	cout << " Event: " << endl;
-	cout << " 1) Add new title" << endl;
-	cout << " 2) Add new time" << endl;
+	cout << " 1) Add new Event" << endl;
+	cout << " 2) Print out current event" << endl;
 	cout << " q) Quit back to main menu" << endl;
 	cout << endl;
 	cout << "Please enter your choice > ";
@@ -47,8 +47,27 @@ void CLI::write_courses_menu() {
 	cout << "Please enter your choice > ";
 }
 
+void CLI::write_screen(string val) {
+	cout << val << endl;
+}
+
 char CLI::get_input() {
 	char input;
+	cin >> input;
+	return input;
+}
+
+string CLI::get_input_string(string question) {
+	cout << question << " > ";
+	string input;
+	cin.ignore();
+	getline(cin, input);
+	return input;
+}
+
+int CLI::get_input_int(string question) {
+	cout << question << " > ";
+	int input;
 	cin >> input;
 	return input;
 }
