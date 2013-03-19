@@ -42,6 +42,7 @@ int main(int argc, char** argv) {
 			case '1':
 				event();
 			case '2':
+				entrants();
 				break;
 			case '3':
 				break;
@@ -55,4 +56,12 @@ void event() {
 		cli.write_event_menu();
 		e_choice = cli.get_input();
 	} while(e_choice != 'q');
+}
+
+void entrants() {
+	char en_choice = 'A';
+	do {
+		cli.write_entrant_menu();
+		en_choice = cli.get_input();
+	} while(en_choice != 'q');
 }

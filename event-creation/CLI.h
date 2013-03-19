@@ -3,5 +3,6 @@ class CLI {
 		CLI();
 		static void write_main_menu();
 		static void write_event_menu();
+		static void write_entrant_menu();
 		static char get_input();
 };
