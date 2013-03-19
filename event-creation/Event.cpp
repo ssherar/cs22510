@@ -7,3 +7,7 @@ Event::Event(std::string info, int day, int month, int year, int hour, int minut
 	std::printf("On the %02d/%02d/%04d \n", day, month, year);
 	std::printf("At %02d:%02d \n", hour, minute);	
 }
+
+//char* Event::format_printing_file() {
+	
+//}

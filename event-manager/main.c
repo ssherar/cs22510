@@ -280,6 +280,7 @@ void startup() {
     printf("Please enter the file for the logging > ");
     scanf(" %30s", log_filename);
     load_log_file(log_filename);
+    append_log_file("Hello World");
 
     printf("Please enter the file for the event information > ");
     scanf(" %30s", info_filename);

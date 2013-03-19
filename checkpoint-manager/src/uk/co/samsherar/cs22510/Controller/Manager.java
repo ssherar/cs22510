@@ -16,6 +16,10 @@ public class Manager {
 		}
 	}
 
+	public void setFiles(String filenames[]) {
+
+	}
+
 	public static Manager getInstance() {
 		if(m == null) {
 			m = new Manager();

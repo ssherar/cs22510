@@ -9,7 +9,10 @@ public class Run {
 			System.exit(1);
 		}
 		
-		Manager.getInstance().runGUI();
+		Manager m =  Manager.getInstance();
+
+		m.setFiles(args);
+		m.runGUI();
 	}
 
 	private static void printUsage() {

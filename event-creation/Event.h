@@ -4,6 +4,6 @@ class Event {
 	int day, month, year, hour, minute;
 	public:
 		Event(std::string, int, int, int, int, int);
-	//	~Event();
+		//Event();
 		char* format_printing_file();
 };
