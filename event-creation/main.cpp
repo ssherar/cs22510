@@ -13,7 +13,7 @@ void courses_menu();
 
 CLI cli;
 Event * event;
-
+vector<Competitor> competitors;
 
 int main(int argc, char** argv) {
 	/*cout << "Hello world" << endl;
@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
 	char choice = 'A';
 	do {
 		cli.write_main_menu();
-		choice = cli.get_input();
+		choice = cli.get_input("");
 		switch(choice) {
 			case '1':
 				event_menu();
@@ -58,7 +58,7 @@ void event_menu() {
 	char e_choice = 'A';
 	do {
 		cli.write_event_menu();
-		e_choice = cli.get_input();
+		e_choice = cli.get_input("");
 		if('1' == e_choice) {
 			string name = cli.get_input_string("Please enter the event name");
 			int day = cli.get_input_int("Please enter a day");
@@ -81,7 +81,22 @@ void entrants_menu() {
 	char en_choice = 'A';
 	do {
 		cli.write_entrant_menu();
-		en_choice = cli.get_input();
+		en_choice = cli.get_input("");
+		if('1' == en_choice) {
+			string name = cli.get_input_string("Please enter the competitor name");
+			char course_id = cli.get_input("Please enter the course id");
+			Competitor tmp (course_id, name);
+			competitors.push_back(tmp);	
+		} else if('2' == en_choice) {
+			for(unsigned int i = 0; i < competitors.size(); i++) {
+				char formatted[100];
+				Competitor tmp = competitors[i];
+				sprintf(formatted, "%02d \t %c \t",
+							i + 1,
+							tmp.course_id);
+				cout << formatted << tmp.name << endl;
+			}
+		}
 	} while(en_choice != 'q');
 }
 
@@ -89,6 +104,6 @@ void courses_menu() {
 	char c_choice = 'A';
 	do {
 		cli.write_courses_menu();
-		c_choice = cli.get_input();
+		c_choice = cli.get_input("");
 	} while(c_choice != 'q');
 }

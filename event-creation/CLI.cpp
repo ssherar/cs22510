@@ -51,7 +51,10 @@ void CLI::write_screen(string val) {
 	cout << val << endl;
 }
 
-char CLI::get_input() {
+char CLI::get_input(string question) {
+	if(!question.empty()) {
+		cout << question << " > ";
+	}
 	char input;
 	cin >> input;
 	return input;
