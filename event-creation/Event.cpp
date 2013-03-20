@@ -28,7 +28,7 @@ string Event::format_for_screen() {
 		ret.append(this->event_name);
 		ret.append("\n");
 		char formatted_time[100];
-		sprintf(formatted_time, "on %02d/%02d/%04d at %02d : %02d",
+		sprintf(formatted_time, "on %02d/%02d/%04d at %02d§:%02d",
 					this->day,
 					this->month,
 					this->year,
@@ -39,6 +39,21 @@ string Event::format_for_screen() {
 	}
 	return ret;
 				
+}
+
+string Event::get_name() {
+	return this->event_name;
+}
+
+string Event::get_date() {
+	char formatted_time[100];
+	sprintf(formatted_time, "on %02d/%02d/%04d at %02d:%02d",
+				this->day,
+				this->month,
+				this->year,
+				this->hour, 
+				this->minute);
+	return formatted_time;
 }
 
 //char* Event::format_printing_file() {

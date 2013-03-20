@@ -1,4 +1,8 @@
+#ifndef COMPETITORS_H
+#define COMPETITORS_H
+
 using namespace std;
+
 
 class Competitor {
 		
@@ -10,4 +14,6 @@ class Competitor {
 		void format_for_file();
 
 };
+
+#endif
 

@@ -4,15 +4,18 @@
 #include "List.h"
 #include "Competitors.h"
 #include "CLI.h"
+#include "FileWriter.h"
 
 using namespace std;
 
 void event_menu();
 void entrants_menu();
 void courses_menu();
+void print_files();
 
 CLI cli;
 Event * event;
+FileWriter * file_io;
 vector<Competitor> competitors;
 vector<Course> courses;
 
@@ -50,6 +53,9 @@ int main(int argc, char** argv) {
 				break;
 			case '3':
 				courses_menu();
+				break;
+			case '4':
+				print_files();
 				break;
 		}
 	} while(choice != 'q');
@@ -123,4 +129,17 @@ void courses_menu() {
 			}
 		}
 	} while(c_choice != 'q');
+}
+
+void print_files() {
+	if(NULL == event ||
+		competitors.size() == 0 ||
+		courses.size() == 0) {
+		
+		cli.write_screen("One or more items are not created. Please create an Event, a Competitor and a Course");
+	} else {
+		string path = cli.get_input_string("Please enter the folder path to create the files");
+		file_io = new FileWriter(path);
+		file_io->write_event_file(event);
+	}
 }

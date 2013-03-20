@@ -12,6 +12,7 @@ void CLI::write_main_menu() {
 	cout << " 1) Create Event Info" << endl;
 	cout << " 2) Add Entrants " << endl;
 	cout << " 3) Add Courses " << endl;
+	cout << " 4) Print to file" << endl;
 	cout << " q) Quit" << endl;
 	cout << endl;
 	cout << "Please enter your choice > ";

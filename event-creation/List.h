@@ -1,4 +1,7 @@
 #include <vector>
+#ifndef LIST_H
+#define LIST_H
+
 class Course;
 class CP_Node;
 using namespace std;
@@ -22,3 +25,5 @@ class CP_Node {
 		CP_Node * next;
 		CP_Node(int);	
 };
+
+#endif

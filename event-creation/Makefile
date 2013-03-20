@@ -1,5 +1,5 @@
 all:
-	g++ -g -Wall main.cpp Event.cpp Course.cpp Competitor.cpp CLI.cpp -o bin/run
+	g++ -g -Wall main.cpp Event.cpp Course.cpp Competitor.cpp CLI.cpp FileWriter.cpp -o bin/run
 
 clean:
 	rm -rf bin/*
