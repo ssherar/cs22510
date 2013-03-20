@@ -16,6 +16,7 @@ class Course {
 		~Course();
 		void add_node(int);
 		void format_for_screen();
+		string format_for_file();
 
 };
 

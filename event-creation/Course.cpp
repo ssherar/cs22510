@@ -1,6 +1,7 @@
 #include "List.h"
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -22,5 +23,15 @@ void Course::format_for_screen() {
 		cout << list[i] << " ";
 	}
 	cout << endl;
+}
+
+string Course::format_for_file() {
+	ostringstream os;
+	os << this->course_id << " ";
+	os << this->list.size() << " ";
+	for(unsigned int i = 0; i < list.size(); i++) {
+		os << this->list[i] << " ";
+	}
+	return os.str();
 }
 

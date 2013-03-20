@@ -33,8 +33,17 @@ void FileWriter::write_competitor_file(vector<Competitor> competitors) {
 			file << competitors[i].name << "\n";
 		}
 	}
-
-
+	file.close();
 }
 
-
+void FileWriter::write_courses_file(vector<Course> courses) {
+	string file_path = this->path.c_str();
+	file_path.append("courses.txt");
+	ofstream file(file_path.c_str());
+	if(file.is_open()) {
+		for(unsigned int i = 0; i < courses.size(); i++) {
+			file << courses[i].format_for_file() << "\n";
+		}
+	}
+	file.close();
+}

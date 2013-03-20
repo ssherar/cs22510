@@ -142,5 +142,6 @@ void print_files() {
 		file_io = new FileWriter(path);
 		file_io->write_event_file(event);
 		file_io->write_competitor_file(competitors);
+		file_io->write_courses_file(courses);
 	}
 }
