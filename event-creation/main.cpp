@@ -14,6 +14,7 @@ void courses_menu();
 CLI cli;
 Event * event;
 vector<Competitor> competitors;
+vector<Course> courses;
 
 int main(int argc, char** argv) {
 	/*cout << "Hello world" << endl;
@@ -105,5 +106,21 @@ void courses_menu() {
 	do {
 		cli.write_courses_menu();
 		c_choice = cli.get_input("");
+		if('1' == c_choice) {
+			char course_id = cli.get_input("Please enter the course id");
+			Course c (course_id);
+			int cv_choice = 0;
+			do {
+				cv_choice = cli.get_input_int("Please enter the checkpoint number (0 to exit)");
+				if(0 != cv_choice) {
+					c.add_node(cv_choice);
+				}
+			} while(cv_choice > 0);
+			courses.push_back(c);	
+		} else if('2' == c_choice) {
+			for(unsigned int i = 0; i < courses.size(); i++) {
+				courses[i].format_for_screen();
+			}
+		}
 	} while(c_choice != 'q');
 }
