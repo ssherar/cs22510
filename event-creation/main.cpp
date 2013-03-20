@@ -141,5 +141,6 @@ void print_files() {
 		string path = cli.get_input_string("Please enter the folder path to create the files");
 		file_io = new FileWriter(path);
 		file_io->write_event_file(event);
+		file_io->write_competitor_file(competitors);
 	}
 }
