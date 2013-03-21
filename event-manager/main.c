@@ -97,6 +97,7 @@ void menu() {
             int comp_id;
             printf("Please enter a competitor id > ");
             scanf(" %d", &comp_id);
+	    append_log_file("Querying Location");
             comp_id = find_comp_index(competitor, no_competitors, comp_id);
             if(*competitor[comp_id].course.start_time == NULL) {
                 printf("Competitor %s has not started yet\n", 
@@ -133,6 +134,7 @@ void menu() {
                   "medical reasons\n");
           printf("\n > ");
           scanf(" %c", &menu_choice);
+	  append_log_file("Querying Status of Competitors");
           if('1' == menu_choice) {
               int not_started = find_not_started(competitor, no_competitors);
               printf("Number of competitors not started: %d\n", not_started);
@@ -163,16 +165,23 @@ void menu() {
             scanf(" %5s", time);
             insert_checkpoint_data_manually(competitor[id-1].course.head, 
                     id, node_id, time);
+	    append_log_file("Manually adding time");
         } else if('4' == menu_choice) {
             char cp_data_filename[30];
             printf("Please enter the data file for the checkpoints > ");
             scanf(" %30s", cp_data_filename);
-            int cp_data_lines = get_number_lines(cp_data_filename);
-            load_time_file(cp_data_filename, cp_data_lines, competitor);
+	    if(get_lock(cp_data_filename) != -1) {
+		    int cp_data_lines = get_number_lines(cp_data_filename);
+		    load_time_file(cp_data_filename, cp_data_lines, competitor);
+		    append_log_file("Loading time file");
+	    } else {
+		    printf("I'm afraid it's locked by another process. Please try again later!");
+	    }
         } else if('5' == menu_choice) {
             print_competitors();
         }
     } while (menu_choice != 'q');
+    close_log_file();
 }
 
 /**
@@ -280,7 +289,6 @@ void startup() {
     printf("Please enter the file for the logging > ");
     scanf(" %30s", log_filename);
     load_log_file(log_filename);
-    append_log_file("Hello World");
 
     printf("Please enter the file for the event information > ");
     scanf(" %30s", info_filename);
