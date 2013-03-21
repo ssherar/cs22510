@@ -6,6 +6,8 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
+
+import uk.co.samsherar.cs22510.Controller.Manager;
 import uk.co.samsherar.cs22510.Model.*;
 
 import javax.swing.*;
@@ -14,12 +16,12 @@ public class MainFrame extends JFrame {
 
 	final JCheckBox medical;
 	final JTextField depart;
-	JComboBox entrants;
-	JComboBox checkpoints;
+	final JComboBox entrants;
+	final JComboBox checkpoints;
 	
 	public MainFrame() {
 		this.setLayout(new GridLayout(0,2));
-		setTitle("Hello World");
+		setTitle("Checkpoint Manager");
 		setSize(300,400);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.add(new JLabel("Entrants: "));
@@ -43,7 +45,7 @@ public class MainFrame extends JFrame {
 		this.add(medical);
 		
 		this.add(new JLabel("Arrival: "));
-		JTextField arrival = new JTextField();
+		final JTextField arrival = new JTextField();
 		this.add(arrival);
 		
 		this.add(new JLabel("Depart: "));
@@ -52,7 +54,38 @@ public class MainFrame extends JFrame {
 		this.add(depart);
 		
 		JButton add = new JButton("Add");
+		add.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Manager m = Manager.getInstance();
+				int ret = m.addTime(entrants.getSelectedItem(), checkpoints.getSelectedItem(),
+							arrival.getText(), depart.getText());
+				if(ret > 0) {
+					String message = "";
+					if(ret == 1) {
+						message = "File lock didn't work. Please try again later";
+					} else if (ret == 2) {
+						message = "File written, but competitor is now excluded";
+					} else if (ret == 3) {
+						message = "Competitor is excluded";
+					}
+					JOptionPane.showMessageDialog(null, message);
+				}
+				arrival.setText("");
+				depart.setText("");
+			}
+			
+		});
 		JButton exit = new JButton("Exit");
+		exit.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+			
+		});
 		
 		this.add(add);
 		this.add(exit);
