@@ -5,34 +5,28 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*;
+import uk.co.samsherar.cs22510.Model.*;
 
 import javax.swing.*;
 
 public class MainFrame extends JFrame {
-	private String[] item1 = {
-			"One",
-			"Two",
-			"3"
-	};
-	
-	private String[] item2 = {
-			"1",
-			"2",
-			"3"
-	};
+
 	final JCheckBox medical;
 	final JTextField depart;
+	JComboBox entrants;
+	
 	public MainFrame() {
 		this.setLayout(new GridLayout(0,2));
 		setTitle("Hello World");
 		setSize(300,400);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.add(new JLabel("Entrants: "));
-		JComboBox entrants = new JComboBox(item1);
+		entrants = new JComboBox();
 		this.add(entrants);
 		
 		this.add(new JLabel("Checkpoints: "));
-		JComboBox checkpoints = new JComboBox(item2);
+		JComboBox checkpoints = new JComboBox();
 		this.add(checkpoints);
 		
 		this.add(new JLabel("Medical Checkpoint? "));
@@ -67,5 +61,12 @@ public class MainFrame extends JFrame {
 		this.repaint();
 		this.validate();
 		this.setVisible(true);
+	}
+	
+	public void populateEntrants(LinkedList<Entrant> entrants) {
+		this.entrants.addItem("");
+		for(Entrant e : entrants) {
+			this.entrants.addItem(e.getName());
+		}
 	}
 }

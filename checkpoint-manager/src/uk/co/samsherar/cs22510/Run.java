@@ -16,6 +16,6 @@ public class Run {
 	}
 
 	private static void printUsage() {
-		System.out.println("Usage: CheckpointManager [Event Info File] [Course File] [Nodes File] [Entrant File] ");
+		System.out.println("Usage: CheckpointManager [Times File] [Course File] [Nodes File] [Entrant File] ");
 	}
 }
