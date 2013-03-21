@@ -36,6 +36,8 @@ void close_log_file() {
 
 void append_log_file(char action[]) {
 	time_t dt = time(NULL);
+	char buf[255];
+	strftime(buf, sizeof buf, "%c", localtime(&dt));
 	printf("%s\n", ctime(&dt));
-	fprintf(log_file_ptr, "[%s] %s\n", ctime(&dt), action);
+	fprintf(log_file_ptr, "[%s] %s\n", buf, action);
 }
