@@ -9,6 +9,7 @@ public class Manager {
 	private MainFrame frame = null;
 	private LinkedList<Entrant> entrants;
 	private LinkedList<Course> courses;
+	private LinkedList<Integer> checkpoints;
 	protected Manager() {
 		
 	}
@@ -18,12 +19,14 @@ public class Manager {
 			frame = new MainFrame();
 			frame.populateEntrants(entrants);
 			frame.setCourses(courses);
+			frame.setCheckpoints(checkpoints);
 		}
 	}
 
 	public void setFiles(String filenames[]) {
 		 this.entrants = FileParser.parse_entrants(filenames[0]);
 		 this.courses = FileParser.parseCourses(filenames[1]);
+		 this.checkpoints = FileParser.parseCheckpoints(filenames[2]);
 	}
 
 	public static Manager getInstance() {

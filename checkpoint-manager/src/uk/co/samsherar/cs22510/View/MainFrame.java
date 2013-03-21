@@ -72,10 +72,16 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void setCourses(LinkedList<Course> courses) {
+//		this.checkpoints.addItem("");
+//		LinkedList<Integer> course = courses.get(0).getCheckpoints();
+//		for(int node : course) {
+//			this.checkpoints.addItem(node);
+//		}
+	}
+	
+	public void setCheckpoints(LinkedList<Integer> checkpoints) {
 		this.checkpoints.addItem("");
-		System.out.println(courses.size());
-		LinkedList<Integer> course = courses.get(0).getCheckpoints();
-		for(int node : course) {
+		for(int node : checkpoints) {
 			this.checkpoints.addItem(node);
 		}
 	}

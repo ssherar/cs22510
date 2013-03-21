@@ -8,10 +8,12 @@ import uk.co.samsherar.cs22510.Model.*;
 public class FileParser {
 	private static String REGEX_ENTRANT = "[0-9]+ ([A-Z]) ([a-zA-Z ]+)";
 	private static String REGEX_COURSES = "([A-Z]) [0-9]+ (.*)";
+	private static String REGEX_CP = "([0-9]+) CP";
 	
 	static {
 		REGEX_ENTRANT.replace(" ", "\\ ");
 		REGEX_COURSES.replace(" ", "\\ ");
+		REGEX_CP.replace(" ", "\\ ");
 	}
 //	public static LinkedList<Entrant_Time> parse_times(String timesPath) {
 //	
@@ -63,7 +65,6 @@ public class FileParser {
 			while((currentLine = br.readLine()) != null) {
 				Matcher match = p.matcher(currentLine);
 				if(match.find()) {
-					System.out.println(match.group(2));
 					char course = match.group(1).toCharArray()[0];
 					Course c = new Course(course);
 					String[] split = match.group(2).split("\\ ");
@@ -84,8 +85,31 @@ public class FileParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(ret.size());
 		return ret;
 	}
 	
+	public static LinkedList<Integer> parseCheckpoints(String checkpointPath) {
+		LinkedList<Integer> ret = new LinkedList<Integer>();
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(checkpointPath));
+			String currentLine;
+			Pattern p = Pattern.compile(REGEX_CP);
+			while((currentLine = br.readLine()) != null) {
+				Matcher match = p.matcher(currentLine);
+				if(match.find()) {
+					int tmp = Integer.parseInt(match.group(1));
+					ret.add(tmp);
+				}
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return ret;
+	}
 }
