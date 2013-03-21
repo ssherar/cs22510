@@ -20,26 +20,6 @@ vector<Competitor> competitors;
 vector<Course> courses;
 
 int main(int argc, char** argv) {
-	/*cout << "Hello world" << endl;
-	Event e ("Hello", 1,2,3,4,5);
-	cout << endl;
-	Course c ('d');
-	c.add_node(1);
-	c.add_node(2);
-	c.add_node(3);
-	c.add_node(4);
-	c.format_for_file();
-	cout << endl;
-
-	vector<Competitor> competitors;
-	Competitor c1 ('d', "Micky Mouse");
-	Competitor c2 ('d', "Mini Mouse");
-	competitors.push_back(c1);
-	competitors.push_back(c2);
-	for(unsigned int i = 0; i < competitors.size(); i++) {
-		cout << i << " " ; 
-		competitors[i].format_for_file();
-	}*/
 	char choice = 'A';
 	do {
 		cli.write_main_menu();
@@ -61,6 +41,10 @@ int main(int argc, char** argv) {
 	} while(choice != 'q');
 }
 
+/**
+ * Handles all the submenus for the event, including
+ * creating and showing the current created event
+ */ 
 void event_menu() {
 	char e_choice = 'A';
 	do {
@@ -84,6 +68,10 @@ void event_menu() {
 	} while(e_choice != 'q');
 }
 
+/**
+ * Handles all the submenus for the entrants, including
+ * Adding entrants and listing alrady created entrants
+ */
 void entrants_menu() {
 	char en_choice = 'A';
 	do {
@@ -107,6 +95,10 @@ void entrants_menu() {
 	} while(en_choice != 'q');
 }
 
+/**
+ * Handles all the submenus for the courses, including
+ * creating and listing of current courses created.
+ */
 void courses_menu() {
 	char c_choice = 'A';
 	do {
@@ -131,6 +123,11 @@ void courses_menu() {
 	} while(c_choice != 'q');
 }
 
+/**
+ * Checks if all data is available to print out
+ * to the file, and then writes the new file
+ * to the directory specified by the user
+ */
 void print_files() {
 	if(NULL == event ||
 		competitors.size() == 0 ||
