@@ -15,6 +15,7 @@ public class MainFrame extends JFrame {
 	final JCheckBox medical;
 	final JTextField depart;
 	JComboBox entrants;
+	JComboBox checkpoints;
 	
 	public MainFrame() {
 		this.setLayout(new GridLayout(0,2));
@@ -26,7 +27,7 @@ public class MainFrame extends JFrame {
 		this.add(entrants);
 		
 		this.add(new JLabel("Checkpoints: "));
-		JComboBox checkpoints = new JComboBox();
+		checkpoints = new JComboBox();
 		this.add(checkpoints);
 		
 		this.add(new JLabel("Medical Checkpoint? "));
@@ -67,6 +68,15 @@ public class MainFrame extends JFrame {
 		this.entrants.addItem("");
 		for(Entrant e : entrants) {
 			this.entrants.addItem(e.getName());
+		}
+	}
+	
+	public void setCourses(LinkedList<Course> courses) {
+		this.checkpoints.addItem("");
+		System.out.println(courses.size());
+		LinkedList<Integer> course = courses.get(0).getCheckpoints();
+		for(int node : course) {
+			this.checkpoints.addItem(node);
 		}
 	}
 }
