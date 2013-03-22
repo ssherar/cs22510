@@ -36,6 +36,11 @@ public class Manager {
 	private String timeFilename;
 	
 	/**
+	 * the path to the log file
+	 */
+	private String logFile;
+	
+	/**
 	 * Singleton protected Constructor
 	 */
 	protected Manager() {
@@ -50,7 +55,6 @@ public class Manager {
 		if(this.frame == null) {
 			frame = new MainFrame();
 			frame.populateEntrants(entrants);
-			frame.setCourses(courses);
 			frame.setCheckpoints(checkpoints);
 		}
 	}
@@ -67,6 +71,7 @@ public class Manager {
 		 FileParser.parseTimes(filenames[3], this.entrants);
 		 this.timeFilename = filenames[3];
 		 Entrant e = this.entrants.get(0);
+		 this.logFile = filenames[4];
 	}
 	
 	/**
@@ -145,5 +150,9 @@ public class Manager {
 			}
 		}
 		return ret;
+	}
+	
+	public int appendLog(String action) {
+		return FileParser.appendLog(this.logFile, action);
 	}
 }

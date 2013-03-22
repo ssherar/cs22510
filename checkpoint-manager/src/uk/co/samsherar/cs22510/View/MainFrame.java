@@ -97,7 +97,10 @@ public class MainFrame extends JFrame {
 						message = "File written, but competitor is now excluded";
 					} else if (ret == 3) {
 						message = "Competitor is excluded";
+					} else {
+						message = "Time added successfully";
 					}
+					m.appendLog(message);
 					JOptionPane.showMessageDialog(null, message);
 				}
 				arrival.setText("");

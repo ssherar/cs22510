@@ -1,5 +1,6 @@
 package uk.co.samsherar.cs22510;
 
+import uk.co.samsherar.cs22510.Controller.FileParser;
 import uk.co.samsherar.cs22510.Controller.Manager;
 /**
  * Main entry point into the program
@@ -12,8 +13,13 @@ public class Run {
 	 * @param args the commandline arguments
 	 */
 	public static void main(String[] args) {
-		if(args.length != 4) {
+		if(args.length != 5) {
 			printUsage();
+			System.exit(1);
+		}
+		
+		if(FileParser.appendLog(args[4], "Started Process") == 1) {
+			System.out.println("Log file is currently locked. Please try again later");
 			System.exit(1);
 		}
 		
@@ -21,12 +27,13 @@ public class Run {
 
 		m.setFiles(args);
 		m.runGUI();
+		FileParser.appendLog(args[4], "Ended Process");
 	}
 	
 	/**
 	 * Prints out the usage to the commandline
 	 */
 	private static void printUsage() {
-		System.out.println("Usage: CheckpointManager [Entrants File] [Courses File] [Checkpoints file] [Times File] ");
+		System.out.println("Usage: CheckpointManager [Entrants File] [Courses File] [Checkpoints file] [Times File] [Log File] ");
 	}
 }

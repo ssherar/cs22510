@@ -307,4 +307,29 @@ public class FileParser {
 		}
 		return 0;
 	}
+	
+	public static int appendLog(String filename, String action) {
+		try {
+			FileOutputStream fos = new FileOutputStream(filename, true);
+			FileLock fl = fos.getChannel().lock();
+			if(fl == null) {
+				return 1;
+			}
+			FileWriter fw = new FileWriter(fos.getFD());
+			Date date = new Date();
+			StringBuilder sb = new StringBuilder();
+			sb.append("Checkpoint-Manager [");
+			sb.append(date.toGMTString());
+			sb.append("] ");
+			sb.append(action);
+			sb.append("\n");
+			fw.write(sb.toString());
+			fl.release();
+			fw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
 }
