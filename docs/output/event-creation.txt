@@ -1,0 +1,196 @@
+ Welcome to Event Creation 
+
+ 1) Create Event Info
+ 2) Add Entrants 
+ 3) Add Courses 
+ 4) Print to file
+ q) Quit
+
+Please enter your choice > 1
+
+ Event: 
+ 1) Add new Event
+ 2) Print out current event
+ q) Quit back to main menu
+
+Please enter your choice > 1
+Please enter the event name > Bob Oreillys Amazing Race
+Please enter a day > 2
+Please enter a month > 2
+Please enter a year > 2013
+Please enter the start hour > 7 
+Please enter the start minute > 30
+
+ Event: 
+ 1) Add new Event
+ 2) Print out current event
+ q) Quit back to main menu
+
+Please enter your choice > 2
+Event: Bob Oreillys Amazing Race
+on 02/02/2013 at 07§:30
+
+
+ Event: 
+ 1) Add new Event
+ 2) Print out current event
+ q) Quit back to main menu
+
+Please enter your choice > q
+
+ Welcome to Event Creation 
+
+ 1) Create Event Info
+ 2) Add Entrants 
+ 3) Add Courses 
+ 4) Print to file
+ q) Quit
+
+Please enter your choice > 2
+
+ Entrants:
+ 1) Add Entrant
+ 2) List Entrants
+ q) Quit back to main menu
+
+Please enter your choice > 1
+Please enter the competitor name > Bugs Duggan
+Please enter the course id > D
+
+ Entrants:
+ 1) Add Entrant
+ 2) List Entrants
+ q) Quit back to main menu
+
+Please enter your choice > 1
+Please enter the competitor name > Trevor Nelson
+Please enter the course id > E
+
+ Entrants:
+ 1) Add Entrant
+ 2) List Entrants
+ q) Quit back to main menu
+
+Please enter your choice > 1
+Please enter the competitor name > Bob Oreilly
+Please enter the course id > A
+
+ Entrants:
+ 1) Add Entrant
+ 2) List Entrants
+ q) Quit back to main menu
+
+Please enter your choice > 2
+01 	 D 	Bugs Duggan
+02 	 E 	Trevor Nelson
+03 	 A 	Bob Oreilly
+
+ Entrants:
+ 1) Add Entrant
+ 2) List Entrants
+ q) Quit back to main menu
+
+Please enter your choice > q
+
+ Welcome to Event Creation 
+
+ 1) Create Event Info
+ 2) Add Entrants 
+ 3) Add Courses 
+ 4) Print to file
+ q) Quit
+
+Please enter your choice > 3
+
+ Courses:
+ 1) Add new Course 
+ 2) List Courses 
+ q) Quit back to main menu
+
+Please enter your choice > 1
+Please enter the course id > A
+Please enter the checkpoint number (0 to exit) > 1
+Please enter the checkpoint number (0 to exit) > 2
+Please enter the checkpoint number (0 to exit) > 3
+Please enter the checkpoint number (0 to exit) > 4
+Please enter the checkpoint number (0 to exit) > 5
+Please enter the checkpoint number (0 to exit) > 9
+Please enter the checkpoint number (0 to exit) > 10
+Please enter the checkpoint number (0 to exit) > 14
+Please enter the checkpoint number (0 to exit) > 7
+Please enter the checkpoint number (0 to exit) > 3
+Please enter the checkpoint number (0 to exit) > 2
+Please enter the checkpoint number (0 to exit) > 1
+Please enter the checkpoint number (0 to exit) > 0
+
+ Courses:
+ 1) Add new Course 
+ 2) List Courses 
+ q) Quit back to main menu
+
+Please enter your choice > 1
+Please enter the course id > D
+Please enter the checkpoint number (0 to exit) > 1
+Please enter the checkpoint number (0 to exit) > 2
+Please enter the checkpoint number (0 to exit) > 3
+Please enter the checkpoint number (0 to exit) > 4
+Please enter the checkpoint number (0 to exit) > 10
+Please enter the checkpoint number (0 to exit) > 3
+Please enter the checkpoint number (0 to exit) > 2
+Please enter the checkpoint number (0 to exit) > 1
+Please enter the checkpoint number (0 to exit) > 0
+
+ Courses:
+ 1) Add new Course 
+ 2) List Courses 
+ q) Quit back to main menu
+
+Please enter your choice > 1
+Please enter the course id > E
+Please enter the checkpoint number (0 to exit) > 1
+Please enter the checkpoint number (0 to exit) > 6
+Please enter the checkpoint number (0 to exit) > 9
+Please enter the checkpoint number (0 to exit) > 4
+Please enter the checkpoint number (0 to exit) > 3
+Please enter the checkpoint number (0 to exit) > 2
+Please enter the checkpoint number (0 to exit) > 1
+Please enter the checkpoint number (0 to exit) > 0
+
+ Courses:
+ 1) Add new Course 
+ 2) List Courses 
+ q) Quit back to main menu
+
+Please enter your choice > 2
+A 1 2 3 4 5 9 10 14 7 3 2 1 
+D 1 2 3 4 10 3 2 1 
+E 1 6 9 4 3 2 1 
+
+ Courses:
+ 1) Add new Course 
+ 2) List Courses 
+ q) Quit back to main menu
+
+Please enter your choice > q
+
+ Welcome to Event Creation 
+
+ 1) Create Event Info
+ 2) Add Entrants 
+ 3) Add Courses 
+ 4) Print to file
+ q) Quit
+
+Please enter your choice > 4
+Please enter the folder path to create the files > data/
+data/event.txt
+
+ Welcome to Event Creation 
+
+ 1) Create Event Info
+ 2) Add Entrants 
+ 3) Add Courses 
+ 4) Print to file
+ q) Quit
+
+Please enter your choice > q

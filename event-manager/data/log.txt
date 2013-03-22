@@ -1,3 +1,28 @@
 [Thu Mar 21 21:25:12 2013] Hello World
 [Thu Mar 21 22:17:55 2013] Hello World
 [Thu Mar 21 22:19:11 2013] Hello World
+Checkpoint-Manager [22 Mar 2013 04:51:49 GMT] Started Process
+Checkpoint-Manager [22 Mar 2013 04:51:50 GMT] Ended Process
+Checkpoint-Manager [22 Mar 2013 04:52:03 GMT] Started Process
+Checkpoint-Manager [22 Mar 2013 04:52:03 GMT] Ended Process
+Checkpoint-Manager [22 Mar 2013 04:52:12 GMT] Started Process
+Checkpoint-Manager [22 Mar 2013 04:52:13 GMT] Ended Process
+Checkpoint-Manager [22 Mar 2013 04:52:48 GMT] Competitor is excluded
+Checkpoint-Manager [22 Mar 2013 04:53:03 GMT] File written, but competitor is now excluded
+Checkpoint-Manager [22 Mar 2013 05:12:25 GMT] Started Process
+Checkpoint-Manager [22 Mar 2013 05:12:26 GMT] Ended Process
+Checkpoint-Manager [22 Mar 2013 05:13:27 GMT] Competitor is excluded
+Checkpoint-Manager [22 Mar 2013 05:26:59 GMT] Started Process
+Checkpoint-Manager [22 Mar 2013 05:26:59 GMT] Ended Process
+Event-Manager: [Fri Mar 22 05:50:04 2013] Started Process
+Event-Manager: [Fri Mar 22 05:50:13 2013] Querying Status of Competitors
+Event-Manager: [Fri Mar 22 05:51:39 2013] Ended Process
+Event-Manager: [Fri Mar 22 05:57:19 2013] Started Process
+Event-Manager: [Fri Mar 22 05:57:22 2013] Querying Status of Competitors
+Event-Manager: [Fri Mar 22 06:00:14 2013] Started Process
+Event-Manager: [Fri Mar 22 06:00:20 2013] Querying Status of Competitors
+Event-Manager: [Fri Mar 22 06:00:32 2013] Loading time file
+Event-Manager: [Fri Mar 22 06:00:35 2013] Querying Status of Competitors
+Event-Manager: [Fri Mar 22 06:00:39 2013] Querying Status of Competitors
+Event-Manager: [Fri Mar 22 06:01:00 2013] Loading time file
+Event-Manager: [Fri Mar 22 06:01:04 2013] Ended Process

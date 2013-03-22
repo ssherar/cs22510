@@ -1,0 +1,4 @@
+checkpoint-manager(master*)$ chflags uchg ../event-manager/data/log.txt
+checkpoint-manager(master*)$ java -classpath bin uk.co.samsherar.cs22510.Run data/comp_data.txt data/courses.txt data/node.txt data/cp_times_1.txt ../event-manager/data/log.txt
+Log file is currently locked. Please try again later
+checkpoint-manager(master*)$

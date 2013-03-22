@@ -1,2 +1,3 @@
-1 D Bob
-2 E Bill
+1 D Bugs Duggan
+2 E Trevor Nelson
+3 A Bob Oreilly

@@ -1,0 +1,234 @@
+event-manager(master*)$ bin/run
+Please enter the file for the logging > data/log.txt
+Please enter the file for the event information > data/event_info.txt
+Please enter the file for the node type > data/node.txt
+Please enter the file for the competitors > data/comp_data.txt
+Please enter the file for the courses > data/courses.txt
+Please enter the file for the tracks > data/tracks.txt
+
+
+Welcome to Endurance Horse Race - Beginners Event on 26th June 2012 07:30! 
+
+	1)	Query Location of Competitor
+	2)	Query status of competitors
+	3)	Supply times for individual competitor
+	4)	Read checkpoint data from file
+	5)	List competitors with times
+	q)	Exit the application
+
+ > 2
+
+
+	1)	Query how many which haven't started
+	2)	Query how many people are on the courses
+	3)	Query how many people have finished
+	4)	Query how many have been disqualified for wrong checkpoint
+	5)	Query how many have been disqualified for medical reasons
+
+ > 1
+Number of competitors not started: 14
+
+
+Welcome to Endurance Horse Race - Beginners Event on 26th June 2012 07:30! 
+
+	1)	Query Location of Competitor
+	2)	Query status of competitors
+	3)	Supply times for individual competitor
+	4)	Read checkpoint data from file
+	5)	List competitors with times
+	q)	Exit the application
+
+ > 4
+
+
+Please enter the data file for the checkpoints > data/cp_times_1.txt
+Node 1 was hit at 07:30 by competitor 0
+Node 1 was hit at 07:35 by competitor 1
+Node 1 was hit at 07:39 by competitor 2
+Node 1 was hit at 07:43 by competitor 3
+Node 1 was hit at 07:47 by competitor 4
+Node 1 was hit at 07:51 by competitor 5
+Node 1 was hit at 07:56 by competitor 6
+Node 1 was hit at 08:01 by competitor 7
+Node 1 was hit at 08:05 by competitor 8
+Node 4 was hit at 08:09 by competitor 0
+Node 1 was hit at 08:10 by competitor 9
+Node 4 was hit at 08:11 by competitor 1
+Node 1 was hit at 08:14 by competitor 10
+Node 1 was hit at 08:18 by competitor 11
+Node 9 was hit at 08:20 by competitor 2
+Node 1 was hit at 08:22 by competitor 12
+Node 5 was hit at 08:22 by competitor 0
+Node 5 was hit at 08:25 by competitor 1
+Node 1 was hit at 08:26 by competitor 13
+Node 9 was hit at 08:33 by competitor 3
+Node 4 was hit at 08:35 by competitor 6
+Node 9 was hit at 08:35 by competitor 4
+Node 9 was hit at 08:37 by competitor 5
+Node 4 was hit at 08:42 by competitor 7
+Node 9 was hit at 08:46 by competitor 0
+Node 5 was hit at 08:48 by competitor 6
+Node 9 was hit at 08:49 by competitor 1
+Node 9 was hit at 08:49 by competitor 8
+Node 9 was hit at 08:54 by competitor 9
+
+
+Welcome to Endurance Horse Race - Beginners Event on 26th June 2012 07:30! 
+
+	1)	Query Location of Competitor
+	2)	Query status of competitors
+	3)	Supply times for individual competitor
+	4)	Read checkpoint data from file
+	5)	List competitors with times
+	q)	Exit the application
+
+ > 2
+
+
+	1)	Query how many which haven't started
+	2)	Query how many people are on the courses
+	3)	Query how many people have finished
+	4)	Query how many have been disqualified for wrong checkpoint
+	5)	Query how many have been disqualified for medical reasons
+
+ > 1
+Number of competitors not started: 0
+
+
+Welcome to Endurance Horse Race - Beginners Event on 26th June 2012 07:30! 
+
+	1)	Query Location of Competitor
+	2)	Query status of competitors
+	3)	Supply times for individual competitor
+	4)	Read checkpoint data from file
+	5)	List competitors with times
+	q)	Exit the application
+
+ > 2
+
+
+	1)	Query how many which haven't started
+	2)	Query how many people are on the courses
+	3)	Query how many people have finished
+	4)	Query how many have been disqualified for wrong checkpoint
+	5)	Query how many have been disqualified for medical reasons
+
+ > 2
+Number of competitors running: 14
+
+
+Welcome to Endurance Horse Race - Beginners Event on 26th June 2012 07:30! 
+
+	1)	Query Location of Competitor
+	2)	Query status of competitors
+	3)	Supply times for individual competitor
+	4)	Read checkpoint data from file
+	5)	List competitors with times
+	q)	Exit the application
+
+ > 5
+
+
+Name                           ID         Course ID       Start Time      End Time        Total Time     
+Donald Duck                    1          D               07:30                                          
+Mickey Mouse                   2          D               07:35                                          
+Jemima Julieta Mouse           3          E               07:39                                          
+Minnie Duck                    4          F               07:43                                          
+Minnie Mouse                   5          E               07:47                                          
+Minnie Mouse Junior            6          E               07:51                                          
+Deputy Doug                    7          D               07:56                                          
+Deputy Duck                    8          D               08:01                                          
+Bewick Swan                    9          F               08:05                                          
+Black Swan                     10         F               08:10                                          
+Albert Einstein                11         E               08:14                                          
+Albert Mouse                   12         D               08:18                                          
+Donald Duck Senior             13         E               08:22                                          
+Egbert Einstein                14         F               08:26                                          
+
+
+Welcome to Endurance Horse Race - Beginners Event on 26th June 2012 07:30! 
+
+	1)	Query Location of Competitor
+	2)	Query status of competitors
+	3)	Supply times for individual competitor
+	4)	Read checkpoint data from file
+	5)	List competitors with times
+	q)	Exit the application
+
+ > 4
+
+
+Please enter the data file for the checkpoints > data/cp_data_2.txt
+Node 13 was hit at 08:56 by competitor 3
+Node 9 was hit at 08:56 by competitor 10
+Node 13 was hit at 08:57 by competitor 2
+Node 5 was hit at 08:57 by competitor 7
+Node 4 was hit at 08:59 by competitor 11
+Node 9 was hit at 09:10 by competitor 12
+Node 13 was hit at 09:12 by competitor 8
+Node 13 was hit at 09:13 by competitor 5
+Node 5 was hit at 09:14 by competitor 11
+Node 9 was hit at 09:14 by competitor 6
+Node 13 was hit at 09:15 by competitor 4
+Node 9 was hit at 09:15 by competitor 13
+Node 13 was hit at 09:17 by competitor 9
+Node 9 was hit at 09:23 by competitor 7
+Node 1 was hit at 09:31 by competitor 0
+Node 1 was hit at 09:34 by competitor 1
+Node 13 was hit at 09:37 by competitor 10
+Node 13 was hit at 09:37 by competitor 13
+Node 1 was hit at 09:42 by competitor 2
+Node 9 was hit at 09:42 by competitor 11
+Node 13 was hit at 09:45 by competitor 12
+Node 1 was hit at 09:46 by competitor 3
+Node 1 was hit at 09:56 by competitor 8
+Node 1 was hit at 09:58 by competitor 5
+Node 1 was hit at 10:02 by competitor 6
+Node 1 was hit at 10:05 by competitor 4
+Node 1 was hit at 10:09 by competitor 9
+Node 1 was hit at 10:11 by competitor 7
+Node 1 was hit at 10:20 by competitor 13
+Node 1 was hit at 10:23 by competitor 11
+Node 1 was hit at 10:26 by competitor 10
+Node 1 was hit at 10:33 by competitor 12
+
+
+Welcome to Endurance Horse Race - Beginners Event on 26th June 2012 07:30! 
+
+	1)	Query Location of Competitor
+	2)	Query status of competitors
+	3)	Supply times for individual competitor
+	4)	Read checkpoint data from file
+	5)	List competitors with times
+	q)	Exit the application
+
+ > 5
+
+
+Name                           ID         Course ID       Start Time      End Time        Total Time     
+Donald Duck                    1          D               07:30           09:31           02:01          
+Mickey Mouse                   2          D               07:35           09:34           01:59          
+Jemima Julieta Mouse           3          E               07:39           09:42           02:03          
+Minnie Duck                    4          F               07:43           09:46           02:03          
+Minnie Mouse                   5          E               07:47           10:05           02:18          
+Minnie Mouse Junior            6          E               07:51           09:58           02:07          
+Deputy Doug                    7          D               07:56           10:02           02:06          
+Deputy Duck                    8          D               08:01           10:11           02:10          
+Bewick Swan                    9          F               08:05           09:56           01:51          
+Black Swan                     10         F               08:10           10:09           01:59          
+Albert Einstein                11         E               08:14           10:26           02:12          
+Albert Mouse                   12         D               08:18           10:23           02:05          
+Donald Duck Senior             13         E               08:22           10:33           02:11          
+Egbert Einstein                14         F               08:26           10:20           01:54          
+
+
+Welcome to Endurance Horse Race - Beginners Event on 26th June 2012 07:30! 
+
+	1)	Query Location of Competitor
+	2)	Query status of competitors
+	3)	Supply times for individual competitor
+	4)	Read checkpoint data from file
+	5)	List competitors with times
+	q)	Exit the application
+
+ > q
