@@ -37,7 +37,7 @@ void append_log_file(char action[]) {
 	time_t dt = time(NULL);
 	char buf[255];
 	strftime(buf, sizeof buf, "%c", localtime(&dt));
-	fprintf(log_file_ptr, "[%s] %s\n", buf, action);
+	fprintf(log_file_ptr, "Event-Manager: [%s] %s\n", buf, action);
 }
 
 int get_lock(char filename[]) {

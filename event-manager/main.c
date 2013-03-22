@@ -49,6 +49,11 @@ Track *tracks;
  */
 int no_competitors = 0, no_courses, no_tracks;
 
+/**
+ * Log filepath
+ */
+char log_path[255];
+
 /** 
  * Method Signatures for the main.c file.
  */
@@ -60,6 +65,7 @@ void print_competitors();
 int find_finished(Competitor comp[], int no_comp);
 int find_running(Competitor comp[], int no_comp);
 int find_not_started(Competitor comp[], int no_comp);
+void write_log(char action[]);
 
 /** 
  * Main entry point for the program, which runs setup
@@ -70,7 +76,9 @@ int find_not_started(Competitor comp[], int no_comp);
  */
 int main(int argc, char *argv[]) {
     startup();
+    write_log("Started Process");
     menu();
+    write_log("Ended Process");
     return EXIT_SUCCESS;
 }
 
@@ -97,7 +105,7 @@ void menu() {
             int comp_id;
             printf("Please enter a competitor id > ");
             scanf(" %d", &comp_id);
-	    append_log_file("Querying Location");
+	    write_log("Querying Location");
             comp_id = find_comp_index(competitor, no_competitors, comp_id);
             if(*competitor[comp_id].course.start_time == NULL) {
                 printf("Competitor %s has not started yet\n", 
@@ -134,7 +142,7 @@ void menu() {
                   "medical reasons\n");
           printf("\n > ");
           scanf(" %c", &menu_choice);
-	  append_log_file("Querying Status of Competitors");
+	  write_log("Querying Status of Competitors");
           if('1' == menu_choice) {
               int not_started = find_not_started(competitor, no_competitors);
               printf("Number of competitors not started: %d\n", not_started);
@@ -165,7 +173,7 @@ void menu() {
             scanf(" %5s", time);
             insert_checkpoint_data_manually(competitor[id-1].course.head, 
                     id, node_id, time);
-	    append_log_file("Manually adding time");
+	    write_log("Manually adding time");
         } else if('4' == menu_choice) {
             char cp_data_filename[30];
             printf("Please enter the data file for the checkpoints > ");
@@ -173,7 +181,7 @@ void menu() {
 	    if(get_lock(cp_data_filename) != -1) {
 		    int cp_data_lines = get_number_lines(cp_data_filename);
 		    load_time_file(cp_data_filename, cp_data_lines, competitor);
-		    append_log_file("Loading time file");
+		    write_log("Loading time file");
 	    } else {
 		    printf("I'm afraid it's locked by another process. Please try again later!");
 	    }
@@ -181,7 +189,6 @@ void menu() {
             print_competitors();
         }
     } while (menu_choice != 'q');
-    close_log_file();
 }
 
 /**
@@ -287,8 +294,7 @@ void startup() {
     int competitor_lines, node_lines, courses_lines, tracks_lines;
 
     printf("Please enter the file for the logging > ");
-    scanf(" %30s", log_filename);
-    load_log_file(log_filename);
+    scanf(" %30s", log_path);
 
     printf("Please enter the file for the event information > ");
     scanf(" %30s", info_filename);
@@ -364,5 +370,11 @@ void print_competitor(struct Competitor comp) {
             comp.course.start_time,
             comp.course.end_time,
             calc_total_time(comp.course));
+}
+
+void write_log(char action[]) {
+	load_log_file(log_path);
+	append_log_file(action);
+	close_log_file();
 }
 
