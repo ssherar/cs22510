@@ -12,13 +12,33 @@ import uk.co.samsherar.cs22510.Model.*;
 
 import javax.swing.*;
 
+/**
+ * The main GUI. Nothing more, nothing less
+ * @author Samuel B Sherar <sbs1@aber.ac.uk>
+ */
 public class MainFrame extends JFrame {
-
-	final JCheckBox medical;
-	final JTextField depart;
-	final JComboBox entrants;
-	final JComboBox checkpoints;
+	/**
+	 * The medical checkbox
+	 */
+	private final JCheckBox medical;
 	
+	/**
+	 * the departure field
+	 */
+	private final JTextField depart;
+	/**
+	 * the entrants combobox
+	 */
+	private final JComboBox entrants;
+	
+	/**
+	 * the checkpoints combobox
+	 */
+	private final JComboBox checkpoints;
+	
+	/**
+	 * Draws the Frame to the screen
+	 */
 	public MainFrame() {
 		this.setLayout(new GridLayout(0,2));
 		setTitle("Checkpoint Manager");
@@ -35,9 +55,13 @@ public class MainFrame extends JFrame {
 		this.add(new JLabel("Medical Checkpoint? "));
 		medical = new JCheckBox();
 		medical.addActionListener(new ActionListener() {
-
+			/*
+			 * Allows for the departure field to be enabled/disabled at click
+			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+			 */
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				
 				depart.setEnabled(medical.isSelected());
 			}
 			
@@ -55,7 +79,11 @@ public class MainFrame extends JFrame {
 		
 		JButton add = new JButton("Add");
 		add.addActionListener(new ActionListener() {
-
+			/*
+			 * Scrapes the data and tries to save it using the Manager
+			 * @see uk.co.samsherar.cs22510.Controller.Manager#getInstance()
+			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+			 */
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				Manager m = Manager.getInstance();
@@ -79,7 +107,10 @@ public class MainFrame extends JFrame {
 		});
 		JButton exit = new JButton("Exit");
 		exit.addActionListener(new ActionListener() {
-
+			/*
+			 * Exits out of the program
+			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+			 */
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
@@ -97,6 +128,10 @@ public class MainFrame extends JFrame {
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Populates the entrants combobox
+	 * @param entrants the list of entrants
+	 */
 	public void populateEntrants(LinkedList<Entrant> entrants) {
 		this.entrants.addItem("");
 		for(Entrant e : entrants) {
@@ -104,14 +139,10 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	public void setCourses(LinkedList<Course> courses) {
-//		this.checkpoints.addItem("");
-//		LinkedList<Integer> course = courses.get(0).getCheckpoints();
-//		for(int node : course) {
-//			this.checkpoints.addItem(node);
-//		}
-	}
-	
+	/**
+	 * Populates the checkpoint combobox
+	 * @param checkpoints the list of checkpoints
+	 */
 	public void setCheckpoints(LinkedList<Integer> checkpoints) {
 		this.checkpoints.addItem("");
 		for(int node : checkpoints) {

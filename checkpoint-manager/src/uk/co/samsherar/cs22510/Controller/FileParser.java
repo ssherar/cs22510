@@ -5,23 +5,45 @@ import java.nio.channels.FileLock;
 import java.util.*;
 import java.util.regex.*;
 import uk.co.samsherar.cs22510.Model.*;
-
+/**
+ * A static class which parses and writes files out.
+ * @author Samuel B Sherar <sbs1@aber.ac.uk>
+ */
 public class FileParser {
+	/**
+	 * Regex for parsing the entrants file
+	 */
 	private static String REGEX_ENTRANT = "([0-9]+) ([A-Z]) ([a-zA-Z ]+)";
+	/**
+	 * Regex for parsing the courses file
+	 */
 	private static String REGEX_COURSES = "([A-Z]) [0-9]+ (.*)";
+	/**
+	 * Regex for parsing the checkpoint file, which only accepts CP, and not JN
+	 */
 	private static String REGEX_CP = "([0-9]+) CP";
+	/**
+	 * Regex for parsing the times file
+	 */
 	private static String REGEX_TIMES = "([A-Z]) ([0-9]+) ([0-9]+) ([0-9]+\\:[0-9]+)";
 	
+	/**
+	 * Escapes all whitespace characters, as {@link Java.util.regex.Pattern#Pattern()}
+	 * dislikes spaces for no apparent reason.
+	 */
 	static {
 		REGEX_ENTRANT.replace(" ", "\\ ");
 		REGEX_COURSES.replace(" ", "\\ ");
 		REGEX_CP.replace(" ", "\\ ");
 		REGEX_TIMES.replace(" ", "\\ ");
 	}
-//	public static LinkedList<Entrant_Time> parse_times(String timesPath) {
-//	
-//	}
 	
+	/**
+	 * Parses entrants and returns a List of {@link uk.co.samsherar.cs22510.Model.Entrant}
+	 * to be manipulated
+	 * @param entrantsPath the path to the entratns file
+	 * @return list of Entrants
+	 */
 	public static LinkedList<Entrant> parse_entrants(String entrantsPath) {
 		LinkedList<Entrant> ret = new LinkedList<Entrant>();
 		BufferedReader br = null;
@@ -59,6 +81,12 @@ public class FileParser {
 		return ret;
 	}
 	
+	/**
+	 * Parses courses and returns a List of {@link uk.co.samsherar.cs22510.Model.Courses}
+	 * to be manipulated
+	 * @param coursePath the path to the courses file
+	 * @return list of courses
+	 */
 	public static LinkedList<Course> parseCourses(String coursePath) {
 		LinkedList<Course> ret = new LinkedList<Course>();
 		BufferedReader br = null;
@@ -92,6 +120,12 @@ public class FileParser {
 		return ret;
 	}
 	
+	/**
+	 * Parses entrants and returns a List of {@link uk.co.samsherar.cs22510.Model.Entrant}
+	 * to be manipulated
+	 * @param checkpointPath the path to the checkpoint file
+	 * @return list of checkpoints
+	 */
 	public static LinkedList<Integer> parseCheckpoints(String checkpointPath) {
 		LinkedList<Integer> ret = new LinkedList<Integer>();
 		BufferedReader br = null;
@@ -116,7 +150,11 @@ public class FileParser {
 		
 		return ret;
 	}
-	
+	/**
+	 * Parses the times file, and adds the visited node to the specified entrant
+	 * @param timeFilename the filepath for the times file
+	 * @param entrants the list of entrants
+	 */
 	public static void parseTimes(String timeFilename, LinkedList<Entrant> entrants) {
 		BufferedReader br = null;
 		try {
@@ -148,6 +186,12 @@ public class FileParser {
 		}
 	}
 	
+	/**
+	 * Finds the Entrant with a specific id in a List of entrants
+	 * @param entrants the list of entrants
+	 * @param id the id of the entrant
+	 * @return Entrant object if exists, null otherwise
+	 */
 	private static Entrant findEntrant(LinkedList<Entrant> entrants, int id) {
 		for(int i = 0; i < entrants.size(); i++) {
 			if(entrants.get(i).getId() == id) {
@@ -156,7 +200,16 @@ public class FileParser {
 		}
 		return null;
 	}
-
+	
+	/**
+	 * Appends a time formatted string to the times file with the flag
+	 * to say that the entrant has been excluded from the rase
+	 * @param filename the times filename
+	 * @param checkpoint the checkpoint in question
+	 * @param entrantId the entrant id
+	 * @param arrival the arrival time
+	 * @return 1 if lock was unsuccessfull, 2 otherwise
+	 */
 	public static int appendExcluded(String filename, Integer checkpoint, int entrantId, String arrival) {
 		try {
 			FileOutputStream fos = new FileOutputStream(filename, true);
@@ -180,7 +233,15 @@ public class FileParser {
 		return 2;
 		
 	}
-
+	
+	/**
+	 * Appends a time to the time file with a standard flag
+	 * @param filename the time filepath
+	 * @param checkpoint the checkpoint id
+	 * @param entrantId the entrant id
+	 * @param arrival the arrival time
+	 * @return 1 if the lock failed, 0 if successful
+	 */
 	public static int appendStandard(String filename, Integer checkpoint,
 			int entrantId, String arrival) {
 		try {
@@ -205,7 +266,17 @@ public class FileParser {
 		return 0;
 		
 	}
-
+	
+	/**
+	 * Appends 2 strings to the times file, one with Arrival time, and 
+	 * one with the departed time
+	 * @param filename the time filename
+	 * @param checkpoint the checkpoint id
+	 * @param entrantId the entrant id
+	 * @param arrival the arrival time
+	 * @param depart the departure time
+	 * @return 1 if lock failed, 0 otherwise
+	 */
 	public static int appendMedical(String filename, Integer checkpoint,
 			int entrantId, String arrival, String depart) {
 		try {
