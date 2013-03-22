@@ -6,10 +6,17 @@
 
 using namespace std;
 
+/**
+ * Constructor which sets the path for all the files 
+ * to be written out to
+ */
 FileWriter::FileWriter(string path) {
 	this->path = path;
 }
 
+/**
+ * Writes the event model to a file
+ */
 void FileWriter::write_event_file(Event * event) {
 	string file_path = this->path.c_str();
 	file_path.append("event.txt");
@@ -22,6 +29,9 @@ void FileWriter::write_event_file(Event * event) {
 	file.close();
 }
 
+/**
+ * Writes the competitors to the file
+ */
 void FileWriter::write_competitor_file(vector<Competitor> competitors) {
 	string file_path = this->path.c_str();
 	file_path.append("comp_data.txt");
@@ -36,6 +46,9 @@ void FileWriter::write_competitor_file(vector<Competitor> competitors) {
 	file.close();
 }
 
+/**
+ * Writes the courses out to the file
+ */
 void FileWriter::write_courses_file(vector<Course> courses) {
 	string file_path = this->path.c_str();
 	file_path.append("courses.txt");
