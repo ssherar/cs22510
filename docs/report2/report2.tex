@@ -21,10 +21,23 @@ As those decisions have already been made, it soon fell in line that I would use
 
 \subsection*{Event Creation}
 
+The Event Creation application was written in \texttt{C++} as I had the least amount of experience writing it. Instantly I thought that it would be overpowered for what it needed to do, as the language would be better suited for something where you are actually modelling data, such as the Event Manager. However, I went into writing the application in an Object-Oriented approach and utilise the core functionality of the language.
+
+The basic design was based loosely on the Model-View-Controller design pattern, with \texttt{CLI.cpp} handling all the data coming and going from the end user, and a controller file for writing out to file called \texttt{FileWriter.cpp}, which meant that I could fully segregate all the data, which is a vital point of the MVC model. When first designing the application, I didn't fully read into language specifics, and decided to write my own LinkedList data structure, only to find out a couple of days later that \texttt{vector} works just as well!
+
+I found that using the \texttt{std} namespace everywhere a little wrong, as I should have understood what namespaces are for before heading into the code, and ended up placing all my code in it. For this application it seemed fine, but for a larger application I would think that it would cause some problems.
+
 \subsection*{Event Manager}
+
+As I decided to reuse my code from the assignment in CS237, and in part did cause me some issues, as my coding standards for the assignment was not at a par to be reused in the future, so having to extend the functionality was an issue. To get around it I decided to write a new file to add to the file, which allowed for file locking and logging. Which meant just a small change in the \texttt{main.c} which sent off a message to one of these new functions. This meant that the additional code took up hardly any time.
+
+However, I ran into problems with file locking, as trying several different tutorials online just got me chasing my tail, as the file locking never actually locks the file for read and write access, and therefore making the whole idea of "file locking" (at least in my head) redundant -- as if any programs who don't check for it will still be able to corrupt the file! 
 
 \subsection*{Checkpoint Manager}
 
+For the GUI, I decided to use Java and the Swing framework, which made the development time shorter and the less issues compared to if I decided to go for GTK+ or QT. My overall structure was of the same flavour of the \texttt{C++} and utilising the Model-View-Controller design pattern again. I also opted to use a singleton pattern for the main class of the application: \texttt{Manager.java}. This meant that I didn't have to implement an Observable model to be able to allow for the Manager to save the data to the file.
+
+As this application was quite a small task, I decided to make a couple of shortcuts when it came to coding standards. One of these were to not have separate classes for each \texttt{ActionListener}, as they were quite a small amount of code needed in them.
 
 \section*{Conclusion}
 
